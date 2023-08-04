@@ -22,12 +22,11 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import PeopleIcon from "@mui/icons-material/People";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import LayersIcon from "@mui/icons-material/Layers";
-import router from "next/router";
 import { useRouter } from "next/navigation";
+import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import PaymentsRoundedIcon from "@mui/icons-material/PaymentsRounded";
 function Copyright(props: any) {
 	return (
 		<Typography
@@ -37,7 +36,7 @@ function Copyright(props: any) {
 			{...props}>
 			{"Copyright © "}
 			<Link color="inherit" href="https://mui.com/">
-				Perera Coding Academy 
+				Perera Coding Academy
 			</Link>{" "}
 			{new Date().getFullYear()}
 			{"."}
@@ -114,19 +113,19 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 			</ListItemButton>
 			<ListItemButton onClick={() => router.push("/dashboard/Students")}>
 				<ListItemIcon>
-					<ShoppingCartIcon />
+					<SchoolRoundedIcon />
 				</ListItemIcon>
 				<ListItemText primary="Students" />
 			</ListItemButton>
 			<ListItemButton>
 				<ListItemIcon>
-					<PeopleIcon />
+					<HomeRoundedIcon />
 				</ListItemIcon>
 				<ListItemText primary="Institutes" />
 			</ListItemButton>
 			<ListItemButton>
 				<ListItemIcon>
-					<BarChartIcon />
+					<PaymentsRoundedIcon />
 				</ListItemIcon>
 				<ListItemText primary="Payments" />
 			</ListItemButton>
@@ -134,7 +133,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 				<ListItemIcon>
 					<LayersIcon />
 				</ListItemIcon>
-				<ListItemText primary="Integrations" />
+				<ListItemText primary="Help" />
 			</ListItemButton>
 		</React.Fragment>
 	);
@@ -211,38 +210,6 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 									{children}
 								</Paper>
 							</Grid>
-							{/* Chart */}
-							{/* <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-							{/* <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-               
-                </Paper>
-              </Grid> */}
-							{/* Recent Orders */}
-							{/* <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                 
-                </Paper>
-              </Grid> */}
 						</Grid>
 						<Copyright sx={{ pt: 4 }} />
 					</Container>
