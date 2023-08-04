@@ -27,7 +27,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import LayersIcon from "@mui/icons-material/Layers";
 import router from "next/router";
-
+import { useRouter } from "next/navigation";
 function Copyright(props: any) {
 	return (
 		<Typography
@@ -50,43 +50,6 @@ const drawerWidth: number = 240;
 interface AppBarProps extends MuiAppBarProps {
 	open?: boolean;
 }
-
-const mainListItems = (
-	<React.Fragment>
-		<ListItemButton>
-			<ListItemIcon>
-				<Link>
-					<DashboardIcon href="/Students" />
-				</Link>
-			</ListItemIcon>
-			<ListItemText primary="Dashboard" />
-		</ListItemButton>
-		<ListItemButton>
-			<ListItemIcon>
-				<ShoppingCartIcon />
-			</ListItemIcon>
-			<ListItemText primary="Students" />
-		</ListItemButton>
-		<ListItemButton>
-			<ListItemIcon>
-				<PeopleIcon />
-			</ListItemIcon>
-			<ListItemText primary="Institutes" />
-		</ListItemButton>
-		<ListItemButton>
-			<ListItemIcon>
-				<BarChartIcon />
-			</ListItemIcon>
-			<ListItemText primary="Payments" />
-		</ListItemButton>
-		<ListItemButton>
-			<ListItemIcon>
-				<LayersIcon />
-			</ListItemIcon>
-			<ListItemText primary="Integrations" />
-		</ListItemButton>
-	</React.Fragment>
-);
 
 const AppBar = styled(MuiAppBar, {
 	shouldForwardProp: (prop) => prop !== "open",
@@ -140,6 +103,41 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 	const toggleDrawer = () => {
 		setOpen(!open);
 	};
+	const router = useRouter();
+	const mainListItems = (
+		<React.Fragment>
+			<ListItemButton onClick={() => router.push("/dashboard")}>
+				<ListItemIcon>
+					<DashboardIcon />
+				</ListItemIcon>
+				<ListItemText primary="Dashboard" />
+			</ListItemButton>
+			<ListItemButton onClick={() => router.push("/dashboard/Students")}>
+				<ListItemIcon>
+					<ShoppingCartIcon />
+				</ListItemIcon>
+				<ListItemText primary="Students" />
+			</ListItemButton>
+			<ListItemButton>
+				<ListItemIcon>
+					<PeopleIcon />
+				</ListItemIcon>
+				<ListItemText primary="Institutes" />
+			</ListItemButton>
+			<ListItemButton>
+				<ListItemIcon>
+					<BarChartIcon />
+				</ListItemIcon>
+				<ListItemText primary="Payments" />
+			</ListItemButton>
+			<ListItemButton>
+				<ListItemIcon>
+					<LayersIcon />
+				</ListItemIcon>
+				<ListItemText primary="Integrations" />
+			</ListItemButton>
+		</React.Fragment>
+	);
 
 	return (
 		<ThemeProvider theme={defaultTheme}>
