@@ -1,22 +1,23 @@
-//import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+"use client";
+import type { Metadata } from "next";
+import { store } from "@/store";
+import { Provider } from "react-redux";
 
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Tution Class Application',
-  
-}
+const metadata: Metadata = {
+	title: "Tution Class Application",
+};
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+	return (
+		<html lang="en">
+			<body>
+				{" "}
+				<Provider store={store}>{children}</Provider>
+			</body>
+		</html>
+	);
 }
