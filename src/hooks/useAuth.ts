@@ -8,7 +8,7 @@ const useAuth = () => {
   const { isAuthenticated } = useAppSelector((state) => state.auth);
 
   const redirect = () => {
-    router.replace("/login");
+    router.replace("/auth/login");
   };
 
   return { isAuthenticated, redirect };
