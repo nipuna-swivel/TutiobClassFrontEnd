@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,27 +6,17 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { useAppDispatch, useAppSelector } from "@/hooks";
-import { fetchStudents } from "@/features/student/studentSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
-import PaymentIcon from '@mui/icons-material/Payment';
+import PaymentIcon from "@mui/icons-material/Payment";
+import { IStudent } from "@/types";
 
-export default function StudentTable() {
-	const dispatch = useAppDispatch();
-	const { students } = useAppSelector((state) => state.student);
+interface Props {
+	students: IStudent[];
+}
 
-	const initFetch = useCallback(() => {
-		return dispatch(fetchStudents());
-	}, [dispatch]);
-
-	useEffect(() => {
-		initFetch();
-	}, [initFetch]);
-
-	console.log(students);
-
+export default function StudentTable({ students }: Props) {
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -41,7 +31,7 @@ export default function StudentTable() {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{students.map((student) => (
+					{students?.map((student) => (
 						<TableRow
 							key={student._id}
 							sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
