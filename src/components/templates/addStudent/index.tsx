@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { addNewStudent } from "@/features/student/studentSlice";
+import { addNewStudent ,reSetAdd} from "@/features/student/studentSlice";
 import { StudentForm } from "@/components/organisms";
 
+import { useRouter } from 'next/navigation'
+
 function AddStudent() {
+    const router = useRouter();
 	const dispatch = useAppDispatch();
 	const students = useAppSelector((state) => state.student);
 	const isAdded = useAppSelector((state) => state.student.isAdded);
@@ -26,9 +29,19 @@ function AddStudent() {
 			})
 		);
 	};
+
+	useEffect(() => {
+		if (isAdded) {
+			router.push("/dashboard/Students");
+		}
+		return () => {
+			dispatch(reSetAdd());
+		};
+	}, [isAdded]);
+
 	return (
 		<div>
-			<StudentForm />
+			<StudentForm func={ saveStudent } />
 		</div>
 	);
 }

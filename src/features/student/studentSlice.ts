@@ -9,6 +9,7 @@ const initialState: IStudentState = {
   loading: false,
   error: null,
   isAdded: false,
+  isUpdated: false,
 };
 
 export const fetchStudents = createAsyncThunk(
@@ -67,10 +68,17 @@ export const deleteStudentById = createAsyncThunk(
   }
 );
 
-const craftSlice = createSlice({
+const studentSlice = createSlice({
   name: "student",
   initialState,
-  reducers: {},
+  reducers: {
+    reSetAdd: (state) => {
+			state.isAdded = false;
+		},
+    reSetUpdate: (state) => {
+			state.isUpdated = false;
+		},
+  },
   extraReducers: (builder) => {
     //get  all students information
     builder
@@ -151,4 +159,6 @@ const craftSlice = createSlice({
   },
 });
 
-export default craftSlice.reducer;
+const { reducer } = studentSlice;
+export default reducer;
+export const { reSetAdd, reSetUpdate } = studentSlice.actions;

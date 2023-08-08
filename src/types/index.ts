@@ -38,5 +38,6 @@ export interface ICraft {
     loading: boolean;
     error:string|null;
     isAdded: boolean;
+    isUpdated: boolean;
   }
   

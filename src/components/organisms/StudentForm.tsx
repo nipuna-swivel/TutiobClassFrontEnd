@@ -8,6 +8,10 @@ import { IStudent } from "@/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+interface Props {
+	studentData: IStudent;
+	func: (value: IStudent) => void;
+}
 const schema = yup
 	.object({
 		name: yup.string().required(),
@@ -19,14 +23,16 @@ const schema = yup
 	.required();
 type FormData = yup.InferType<typeof schema>;
 
-export const StudentForm = () => {
+export const StudentForm = ({ studentData, func }: Props) => {
 	const {
 		register,
 		handleSubmit,
 		watch,
 		formState: { errors },
 	} = useForm<IStudent>({ resolver: yupResolver(schema) });
-	const onSubmit: SubmitHandler<IStudent> = (data) => console.log(data);
+	const onSubmit: SubmitHandler<IStudent> = (data) => {
+		func(data);
+	};
 
 	console.log(watch("name"));
 	return (
@@ -35,7 +41,9 @@ export const StudentForm = () => {
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Stack className="flex justify-center ml-10">
 					<div className="p-3">
-						<p className="text-rose-700 font-semibold">{errors.name?.message}</p>
+						<p className="text-rose-700 font-semibold">
+							{errors.name?.message}
+						</p>
 						<TextField
 							{...register("name")}
 							required
@@ -60,7 +68,9 @@ export const StudentForm = () => {
 					</div>
 
 					<div className="p-4">
-						<p className="text-rose-700 font-semibold">{errors.school?.message}</p>
+						<p className="text-rose-700 font-semibold">
+							{errors.school?.message}
+						</p>
 						<TextField
 							required
 							{...register("school")}
@@ -73,7 +83,9 @@ export const StudentForm = () => {
 					</div>
 
 					<div className="p-4">
-						<p className="text-rose-700 font-semibold">{errors.contactNo?.message}</p>
+						<p className="text-rose-700 font-semibold">
+							{errors.contactNo?.message}
+						</p>
 						<TextField
 							required
 							{...register("contactNo")}
@@ -86,7 +98,9 @@ export const StudentForm = () => {
 					</div>
 
 					<div className="p-4">
-						<p className="text-rose-700 font-semibold">{errors.classLocation?.message}</p>
+						<p className="text-rose-700 font-semibold">
+							{errors.classLocation?.message}
+						</p>
 						<TextField
 							required
 							{...register("classLocation")}
