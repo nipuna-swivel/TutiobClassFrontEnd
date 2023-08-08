@@ -13,7 +13,7 @@ const schema = yup
 		name: yup.string().required(),
 		nic: yup.string().required(),
 		school: yup.string().required(),
-		contactNo: yup.number().required(),
+		contactNo: yup.string().required(),
 		classLocation: yup.string().required(),
 	})
 	.required();
