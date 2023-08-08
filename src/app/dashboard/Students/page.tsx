@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import StudentTable from "@/components/organisms/DataTable";
+import ListStudent from "@/components/templates/listStudent";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -28,7 +28,7 @@ function Students() {
 				</div>
 			</div>
 
-			<StudentTable />
+			<ListStudent />
 		</div>
 	);
 }
