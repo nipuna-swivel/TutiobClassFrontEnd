@@ -1,6 +1,6 @@
 import React from 'react'
 
-function StudentForm() {
+ export const StudentForm=()=> {
   return (
     <div>
       studentForm
@@ -8,4 +8,5 @@ function StudentForm() {
   )
 }
 
-export default StudentForm
+
+
