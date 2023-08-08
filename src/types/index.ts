@@ -37,5 +37,6 @@ export interface ICraft {
     student: IStudent|null;
     loading: boolean;
     error:string|null;
+    isAdded: boolean;
   }
   

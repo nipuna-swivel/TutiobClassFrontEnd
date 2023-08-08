@@ -8,6 +8,7 @@ const initialState: IStudentState = {
   student: null,
   loading: false,
   error: null,
+  isAdded: false,
 };
 
 export const fetchStudents = createAsyncThunk(
@@ -84,7 +85,7 @@ const craftSlice = createSlice({
         state.loading = false;
       });
 
-    //get craft by id
+    //get student by id
     builder
       .addCase(fetchStudentById.pending, (state) => {
         state.loading = true;
@@ -97,13 +98,14 @@ const craftSlice = createSlice({
         state.loading = false;
       });
 
-    //add craft
+    //add student
     builder
       .addCase(addNewStudent.pending, (state) => {
         state.loading = true;
       })
       .addCase(addNewStudent.fulfilled, (state, action) => {
         state.loading = false;
+        state.isAdded=true;
         state.students = [...state.students, action.payload];
       })
       .addCase(addNewStudent.rejected, (state, action: PayloadAction<any>) => {
@@ -111,7 +113,7 @@ const craftSlice = createSlice({
         state.error = action.payload;
       });
 
-    //update craft
+    //update student
     builder
       .addCase(editStudent.pending, (state) => {
         state.loading = true;
@@ -128,7 +130,7 @@ const craftSlice = createSlice({
         state.error = action.payload;
       });
 
-    //delete craft
+    //delete student
     builder
       .addCase(deleteStudentById.pending, (state) => {
         state.loading = true;
