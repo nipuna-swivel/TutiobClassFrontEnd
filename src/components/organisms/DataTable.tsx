@@ -11,6 +11,7 @@ import { fetchStudents } from "@/features/student/studentSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
+import PaymentIcon from '@mui/icons-material/Payment';
 
 export default function StudentTable() {
 	const dispatch = useAppDispatch();
@@ -53,6 +54,9 @@ export default function StudentTable() {
 							<TableCell align="right">{student.classLocation}</TableCell>
 							<TableCell align="right">
 								{" "}
+								<IconButton aria-label="edit" color="primary">
+									<PaymentIcon />
+								</IconButton>
 								<IconButton aria-label="edit" color="primary">
 									<EditIcon />
 								</IconButton>
