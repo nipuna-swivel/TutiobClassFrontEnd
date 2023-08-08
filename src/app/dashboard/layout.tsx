@@ -27,6 +27,7 @@ import { useRouter } from "next/navigation";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import PaymentsRoundedIcon from "@mui/icons-material/PaymentsRounded";
+import LogoutIcon from '@mui/icons-material/Logout';
 function Copyright(props: any) {
 	return (
 		<Typography
@@ -167,8 +168,8 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 							Dashboard
 						</Typography>
 						<IconButton color="inherit">
-							<Badge badgeContent={4} color="secondary">
-								<NotificationsIcon />
+							<Badge color="secondary">
+								<LogoutIcon />
 							</Badge>
 						</IconButton>
 					</Toolbar>
