@@ -10,9 +10,14 @@ function Students() {
 	const router = useRouter();
 	return (
 		<div>
-			<div className="flex flex-row ">
-				<div className="basis-1/2">Dashboard-Students</div>{" "}
-				<div className="basis-1/4">
+			<div className="flex flex-row justify-start ">
+				<div className="basis-1/8">
+					{" "}
+					<Typography variant="h3" >
+						Students
+					</Typography>
+				</div>{" "}
+				<div className="basis-1/8 ">
 					<IconButton
 						aria-label="add"
 						color="primary"

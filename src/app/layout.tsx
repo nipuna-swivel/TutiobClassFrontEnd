@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { store } from "@/store";
 import { Provider } from "react-redux";
+import './globals.css'
 
 const metadata: Metadata = {
 	title: "Tution Class Application",
