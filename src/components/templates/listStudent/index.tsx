@@ -1,7 +1,11 @@
 import React, { useCallback, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import StudentTable from "@/components/organisms/DataTable";
-import { fetchStudents } from "@/features/student/studentSlice";
+import { fetchStudents,deleteStudentById } from "@/features/student/studentSlice";
+
+interface Props{
+	handleDeleteStudent: () => void
+}
 
 function ListStudent() {
 	const dispatch = useAppDispatch();
@@ -14,9 +18,18 @@ function ListStudent() {
 	useEffect(() => {
 		initFetch();
 	}, [initFetch]);
+
+const handleDeleteStudent = (id:string) => {
+	try {
+		dispatch(deleteStudentById(id));
+	} catch (error) {
+		console.log("error in deleting employee", error);
+	}
+};
+
 	return (
 		<div>
-			<StudentTable students={students} />
+			<StudentTable students={students} handleDeleteStudent={handleDeleteStudent}/>
 		</div>
 	);
 }

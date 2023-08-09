@@ -10,6 +10,10 @@ const initialState: IStudentState = {
   error: null,
   isAdded: false,
   isUpdated: false,
+  handleDeleteStudent: function (): void
+  {
+    throw new Error( "Function not implemented." );
+  }
 };
 
 export const fetchStudents = createAsyncThunk(
@@ -48,7 +52,7 @@ export const editStudent = createAsyncThunk(
   "student/updateStudent",
   async (params: { id: string; payload: any }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.put(`/students/${params.id}`, params.payload);
+      const { data } = await axios.put(`/student/${params.id}`, params.payload);
       return data;
     } catch (e: any) {
       throw rejectWithValue(e.response.data.message);
@@ -57,10 +61,10 @@ export const editStudent = createAsyncThunk(
 );
 
 export const deleteStudentById = createAsyncThunk(
-  "craft/deleteStudentById",
+  "student/deleteStudentById",
   async (studentId: string, { rejectWithValue }) => {
     try {
-      await axios.delete(`/students/${studentId}`);
+      await axios.delete(`/student/${studentId}`);
       return studentId;
     } catch (e: any) {
       throw rejectWithValue(e.response.data.message);
