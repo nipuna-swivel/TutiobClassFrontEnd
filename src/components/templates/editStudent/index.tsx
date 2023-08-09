@@ -19,7 +19,7 @@ function EditStudentForm() {
 	const isLoading = useAppSelector((state) => state.student.loading);
 	const error = useAppSelector((state) => state.student.error);
 
-  console.log("Student query edit",query);
+ // console.log("Student query edit",query);
 
 	const initFetch = () => {
 		return dispatch(fetchStudentById(studentId));

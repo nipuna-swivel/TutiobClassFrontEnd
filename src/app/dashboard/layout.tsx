@@ -112,7 +112,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 				</ListItemIcon>
 				<ListItemText primary="Dashboard" />
 			</ListItemButton>
-			<ListItemButton onClick={() => router.push("/dashboard/Students")}>
+			<ListItemButton onClick={() => router.push("/dashboard/Students/list")}>
 				<ListItemIcon>
 					<SchoolRoundedIcon />
 				</ListItemIcon>

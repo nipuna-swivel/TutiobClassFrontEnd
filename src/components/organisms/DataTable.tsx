@@ -51,11 +51,10 @@ export default function StudentTable({ students, handleDeleteStudent }: Props) {
 								<IconButton aria-label="edit" color="primary">
 									<PaymentIcon />
 								</IconButton>
-								<IconButton aria-label="edit" color="primary" onClick={() => router.push(`dashboard/Students/edit/${student._id}`)}>
-									{/* <Link href={`dashboard/Students/edit/${student._id}`}>
+								<IconButton aria-label="edit" color="primary">
+									<Link href={`/dashboard/Students/edit/${student._id}`}>
 										<EditIcon />
-									</Link> */}
-									<EditIcon />
+									</Link>
 								</IconButton>
 								<IconButton
 									aria-label="delete"

@@ -54,7 +54,7 @@ export default function LoginForm() {
 			if (result?.error) {
 				return message.error(result?.payload);
 			}
-			router.push("/dashboard");
+			router.push("/dashboard/Students/list");
 		} catch (err) {
 			console.error(err);
 		}

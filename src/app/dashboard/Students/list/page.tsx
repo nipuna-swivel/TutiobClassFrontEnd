@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { useRouter } from "next/navigation";
 
-function Students() {
+function StudentsList() {
 	const router = useRouter();
 	return (
 		<div>
@@ -33,4 +33,4 @@ function Students() {
 	);
 }
 
-export default Students;
+export default StudentsList;
