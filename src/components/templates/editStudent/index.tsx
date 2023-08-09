@@ -1,11 +1,12 @@
 import React from 'react'
+import { StudentForm } from '@/components/organisms'
 
-function EditStudent() {
+function EditStudentForm() {
   return (
     <div>
-      
+      <StudentForm/>
     </div>
   )
 }
 
-export default EditStudent
+export default EditStudentForm
