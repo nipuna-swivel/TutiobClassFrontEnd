@@ -14,10 +14,10 @@ import { IStudent } from "@/types";
 
 interface Props {
 	students: IStudent[];
-	handleDeleteStudent: (id:string) => void
+	handleDeleteStudent: (id: string) => void;
 }
 
-export default function StudentTable({ students,handleDeleteStudent }: Props) {
+export default function StudentTable({ students, handleDeleteStudent }: Props) {
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -51,7 +51,10 @@ export default function StudentTable({ students,handleDeleteStudent }: Props) {
 								<IconButton aria-label="edit" color="primary">
 									<EditIcon />
 								</IconButton>
-								<IconButton aria-label="delete" color="secondary" onClick={() => handleDeleteStudent(student._id)}  >
+								<IconButton
+									aria-label="delete"
+									color="secondary"
+									onClick={() => handleDeleteStudent(student._id)}>
 									<DeleteIcon />
 								</IconButton>
 							</TableCell>
