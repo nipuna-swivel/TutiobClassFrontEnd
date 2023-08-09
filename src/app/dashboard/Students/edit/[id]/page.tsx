@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import EditStudentForm from '@/components/templates/editStudent';
 

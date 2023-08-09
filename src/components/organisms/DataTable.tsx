@@ -11,6 +11,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import PaymentIcon from "@mui/icons-material/Payment";
 import { IStudent } from "@/types";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Props {
 	students: IStudent[];
@@ -18,6 +20,7 @@ interface Props {
 }
 
 export default function StudentTable({ students, handleDeleteStudent }: Props) {
+	const router = useRouter();
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -48,7 +51,10 @@ export default function StudentTable({ students, handleDeleteStudent }: Props) {
 								<IconButton aria-label="edit" color="primary">
 									<PaymentIcon />
 								</IconButton>
-								<IconButton aria-label="edit" color="primary">
+								<IconButton aria-label="edit" color="primary" onClick={() => router.push(`dashboard/Students/edit/${student._id}`)}>
+									{/* <Link href={`dashboard/Students/edit/${student._id}`}>
+										<EditIcon />
+									</Link> */}
 									<EditIcon />
 								</IconButton>
 								<IconButton
