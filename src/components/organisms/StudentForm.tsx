@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 interface Props {
-	studentData: IStudent;
+	studentDetails: IStudent;
 	func: (value: IStudent) => void;
 }
 const schema = yup
@@ -23,7 +23,8 @@ const schema = yup
 	.required();
 type FormData = yup.InferType<typeof schema>;
 
-export const StudentForm = ({ studentData, func }: Props) => {
+export const StudentForm = ({ studentDetails, func }: Props) => {
+	console.log("studentData",studentDetails)
 	const {
 		register,
 		handleSubmit,

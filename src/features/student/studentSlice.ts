@@ -30,7 +30,7 @@ export const fetchStudentById = createAsyncThunk(
   "student/fetchStudentById",
   async (studentId: string) => {
     try {
-      const { data } = await axios.get(`/students/${studentId}`);
+      const { data } = await axios.get(`/student/${studentId}`);
       return data;
     } catch (error) {}
   }
