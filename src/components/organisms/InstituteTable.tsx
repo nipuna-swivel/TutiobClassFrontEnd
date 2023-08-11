@@ -14,12 +14,12 @@ import Link from "next/link";
 
 interface Props {
 	institutes: IInstitute[];
-	handleDeleteStudent: (id: string) => void;
+	handleDeleteInstitute: (id: string) => void;
 }
 
 export default function InstituteTable({
 	institutes,
-	handleDeleteStudent,
+	handleDeleteInstitute,
 }: Props) {
 	return (
 		<TableContainer component={Paper}>
@@ -57,7 +57,7 @@ export default function InstituteTable({
 								<IconButton
 									aria-label="delete"
 									color="secondary"
-									onClick={() => handleDeleteStudent(institute._id)}>
+									onClick={() => handleDeleteInstitute(institute._id)}>
 									<DeleteIcon />
 								</IconButton>
 							</TableCell>
