@@ -48,11 +48,11 @@ export default function InstituteTable({
 							<TableCell align="right">
 								{" "}
 								<IconButton aria-label="edit" color="primary">
-									{/* <Link 
-                                    // href={`/dashboard/Students/edit/${institute._id}`}
-                                    > */}
+									<Link 
+                                     href={`/dashboard/Tution/edit/${institute._id}`}
+                                    >
 									<EditIcon />
-									{/* </Link> */}
+									</Link>
 								</IconButton>
 								<IconButton
 									aria-label="delete"
