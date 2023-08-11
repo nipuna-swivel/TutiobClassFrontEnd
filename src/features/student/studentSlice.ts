@@ -51,6 +51,7 @@ export const addNewStudent = createAsyncThunk(
 export const editStudent = createAsyncThunk(
   "student/updateStudent",
   async (params: { id: string; payload: any }, { rejectWithValue }) => {
+   console.log("parameters", params);
     try {
       const { data } = await axios.put(`/student/${params.id}`, params.payload);
       return data;
@@ -132,6 +133,7 @@ const studentSlice = createSlice({
       })
       .addCase(editStudent.fulfilled, (state, action) => {
         state.loading = false;
+        state.isUpdated=true;
         const students = state.students.filter(
           (student) => student._id !== action.payload?._id
         );
