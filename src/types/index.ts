@@ -16,3 +16,23 @@ export interface IStudentState {
 	isUpdated: boolean;
 	handleDeleteStudent: () => void;
 }
+
+export interface IInstitute{
+	_id: string;
+	classLocation: string;
+	day: string;
+	time: string;
+	fee: string;
+}
+
+export interface IInstituteState{
+	institutes:IInstitute[];
+	institute:IInstitute|null;
+	loading: boolean;
+	error:string|null;
+	isAdded: boolean;
+	isUpdated: boolean;
+	handleDeleteInstitute:()=>void;
+
+
+}
