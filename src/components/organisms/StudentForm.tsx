@@ -7,7 +7,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import { IStudent } from "@/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
+import { useRouter } from "next/navigation";
 interface Props {
 	studentDetails: IStudent;
 	func: (value: IStudent) => void;
@@ -24,6 +24,7 @@ const schema = yup
 type FormData = yup.InferType<typeof schema>;
 
 export const StudentForm = ({ studentDetails, func }: Props) => {
+	const router = useRouter();
 	console.log("studentData", studentDetails);
 
 	const {
@@ -127,7 +128,12 @@ export const StudentForm = ({ studentDetails, func }: Props) => {
 				</Stack>
 				<div>
 					<Stack direction="row" spacing={2} className="m-3 justify-end mr-80">
-						<Button variant="outlined" startIcon={<DeleteIcon />}>
+						<Button
+							variant="outlined"
+							startIcon={<DeleteIcon />}
+							onClick={() => {
+								router.push("/dashboard/Students/list");
+							}}>
 							Delete
 						</Button>
 						<Button variant="contained" type="submit" endIcon={<SaveIcon />}>

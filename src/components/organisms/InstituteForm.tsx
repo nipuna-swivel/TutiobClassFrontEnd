@@ -7,7 +7,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import { IInstitute } from "@/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
+import { useRouter } from "next/navigation";
 interface Props {
 	instituteDetails: IInstitute;
 	func: (value: IInstitute) => void;
@@ -18,14 +18,13 @@ const schema = yup
 		day: yup.string().required(),
 		time: yup.string().required(),
 		fee: yup.string().required(),
-		
 	})
 	.required();
 type FormData = yup.InferType<typeof schema>;
 
 export const InstituteForm = ({ instituteDetails, func }: Props) => {
 	console.log("studentData", instituteDetails);
-
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
@@ -43,7 +42,6 @@ export const InstituteForm = ({ instituteDetails, func }: Props) => {
 			setValue("day", instituteDetails.day);
 			setValue("time", instituteDetails.time);
 			setValue("fee", instituteDetails.fee);
-			
 		}
 	}, [instituteDetails]);
 
@@ -96,9 +94,7 @@ export const InstituteForm = ({ instituteDetails, func }: Props) => {
 					</div>
 
 					<div className="p-4">
-						<p className="text-rose-700 font-semibold">
-							{errors.fee?.message}
-						</p>
+						<p className="text-rose-700 font-semibold">{errors.fee?.message}</p>
 						<TextField
 							required
 							{...register("fee")}
@@ -109,12 +105,15 @@ export const InstituteForm = ({ instituteDetails, func }: Props) => {
 							size="small"
 						/>
 					</div>
-
-			
 				</Stack>
 				<div>
 					<Stack direction="row" spacing={2} className="m-3 justify-end mr-80">
-						<Button variant="outlined" startIcon={<DeleteIcon />}>
+						<Button
+							variant="outlined"
+							startIcon={<DeleteIcon />}
+							onClick={() => {
+								router.push("/dashboard/Tution/list");
+							}}>
 							Delete
 						</Button>
 						<Button variant="contained" type="submit" endIcon={<SaveIcon />}>

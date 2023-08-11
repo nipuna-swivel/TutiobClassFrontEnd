@@ -36,3 +36,12 @@ export interface IInstituteState{
 
 
 }
+
+export interface IPayment {
+	_id:string;
+
+}
+
+export interface IPaymentState{
+
+}
