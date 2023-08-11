@@ -20,7 +20,7 @@ function TutionClassList() {
 						aria-label="add"
 						color="primary"
 						className="basis-1/4"
-						// onClick={() => router.push("/dashboard/Students/add")}
+						 onClick={() => router.push("/dashboard/Tution/add")}
 					>
 						<PersonAddIcon />
 					</IconButton>
