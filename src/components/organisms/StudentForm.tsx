@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { Button, Stack, Typography } from "@mui/material";
@@ -24,16 +24,28 @@ const schema = yup
 type FormData = yup.InferType<typeof schema>;
 
 export const StudentForm = ({ studentDetails, func }: Props) => {
-	console.log("studentData",studentDetails)
+	console.log("studentData", studentDetails);
+
 	const {
 		register,
 		handleSubmit,
 		watch,
+		setValue,
 		formState: { errors },
 	} = useForm<IStudent>({ resolver: yupResolver(schema) });
 	const onSubmit: SubmitHandler<IStudent> = (data) => {
 		func(data);
 	};
+
+	useEffect(() => {
+		if (studentDetails) {
+			setValue("name", studentDetails.name);
+			setValue("nic", studentDetails.nic);
+			setValue("school", studentDetails.school);
+			setValue("contactNo", studentDetails.contactNo);
+			setValue("classLocation", studentDetails.classLocation);
+		}
+	}, [studentDetails]);
 
 	console.log(watch("name"));
 	return (
