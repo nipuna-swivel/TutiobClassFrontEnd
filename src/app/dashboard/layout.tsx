@@ -27,7 +27,7 @@ import { useRouter } from "next/navigation";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import PaymentsRoundedIcon from "@mui/icons-material/PaymentsRounded";
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
 
 function Copyright(props: any) {
 	return (
@@ -119,7 +119,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 				</ListItemIcon>
 				<ListItemText primary="Students" />
 			</ListItemButton>
-			<ListItemButton onClick={() => router.push("/dashboard/Tution/list")} >
+			<ListItemButton onClick={() => router.push("/dashboard/Tution/list")}>
 				<ListItemIcon>
 					<HomeRoundedIcon />
 				</ListItemIcon>
@@ -168,7 +168,11 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 							sx={{ flexGrow: 1 }}>
 							Dashboard
 						</Typography>
-						<IconButton color="inherit" onClick={()=>{router.push('/login')}}>
+						<IconButton
+							color="inherit"
+							onClick={() => {
+								router.push("/login");
+							}}>
 							<Badge color="secondary">
 								<LogoutIcon />
 							</Badge>
