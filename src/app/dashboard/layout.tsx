@@ -124,7 +124,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 				</ListItemIcon>
 				<ListItemText primary="Institutes" />
 			</ListItemButton>
-			<ListItemButton>
+			<ListItemButton onClick={()=>router.push("/dashboard/Payments/add")}>
 				<ListItemIcon>
 					<PaymentsRoundedIcon />
 				</ListItemIcon>
