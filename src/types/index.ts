@@ -39,9 +39,20 @@ export interface IInstituteState{
 
 export interface IPayment {
 	_id:string;
+	nic:string;
+	month:string;
+	classLocation:string;
+	amount:string;
 
 }
 
 export interface IPaymentState{
+
+	payments:IPayment[];
+	payment:IPayment|null;
+	loading:boolean;
+	error:string|null;
+	isAdded:boolean
+	isUpdated:boolean
 
 }

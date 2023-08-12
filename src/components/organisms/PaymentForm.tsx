@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import TextField from "@mui/material/TextField";
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, IconButton, Stack, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 import { IInstitute } from "@/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
+import SearchIcon from '@mui/icons-material/Search';
 interface Props {
 	instituteDetails: IInstitute;
 	func: (value: IInstitute) => void;
@@ -55,22 +56,27 @@ export const PaymentForm = ({ instituteDetails, func }: Props) => {
 						<p className="text-rose-700 font-semibold">
 							{errors.classLocation?.message}
 						</p>
+
 						<TextField
 							{...register("classLocation")}
 							required
 							fullWidth
-							sx={{ width: 800 }}
-							label="Institute Name"
+							sx={{ width: 600 }}
+							label="NIC"
 							id="outlined-required"
 							size="small"
 						/>
+						 <Button variant="outlined"><SearchIcon /></Button>
+						{/* <IconButton aria-label="delete">
+							<SearchIcon />
+						</IconButton> */}
 					</div>
 					<div className="p-3">
 						<p className="text-rose-700 font-semibold">{errors.day?.message}</p>
 						<TextField
 							required
 							{...register("day")}
-							label="Day"
+							label="Month"
 							fullWidth
 							sx={{ width: 800 }}
 							id="outlined-required"
@@ -85,7 +91,7 @@ export const PaymentForm = ({ instituteDetails, func }: Props) => {
 						<TextField
 							required
 							{...register("time")}
-							label="Time"
+							label="Class Location"
 							fullWidth
 							sx={{ width: 800 }}
 							id="outlined-required"
@@ -98,7 +104,7 @@ export const PaymentForm = ({ instituteDetails, func }: Props) => {
 						<TextField
 							required
 							{...register("fee")}
-							label="Class Fees"
+							label="Amount"
 							fullWidth
 							sx={{ width: 800 }}
 							id="outlined-required"
