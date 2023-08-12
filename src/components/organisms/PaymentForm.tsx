@@ -118,7 +118,7 @@ export const PaymentForm = ({ instituteDetails, func }: Props) => {
 							variant="outlined"
 							startIcon={<DeleteIcon />}
 							onClick={() => {
-								router.push("/dashboard/Tution/list");
+								router.push("/dashboard/Students/list");
 							}}>
 							Delete
 						</Button>
