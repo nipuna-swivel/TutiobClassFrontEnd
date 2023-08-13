@@ -5,3 +5,4 @@ export * from '@/components/templates/listIntitute/index';
 export * from '@/components/templates/addIntitute/index';
 export * from '@/components/templates/editInstitute/index';
 export * from '@/components/templates/addPayment/index';
+export * from '@/components/templates/listPayment/index';

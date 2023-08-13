@@ -122,7 +122,7 @@ export const PaymentForm = ({ paymentDetails, func }: Props) => {
 							variant="outlined"
 							startIcon={<DeleteIcon />}
 							onClick={() => {
-								router.push("/dashboard/Students/list");
+								router.push("/dashboard/Payments/list");
 							}}>
 							Delete
 						</Button>

@@ -33,7 +33,7 @@ function AddInstitute() {
 
 	useEffect(() => {
 		if (isAdded) {
-			router.push("/dashboard/Students/list");
+			router.push("/dashboard/Payments/list");
 		}
 		return () => {
 			dispatch(reSetAdd());

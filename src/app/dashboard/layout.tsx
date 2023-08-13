@@ -27,6 +27,7 @@ import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import PaymentsRoundedIcon from "@mui/icons-material/PaymentsRounded";
 import LogoutIcon from "@mui/icons-material/Logout";
+import HistoryIcon from '@mui/icons-material/History';
 
 function Copyright(props: any) {
 	return (
@@ -130,11 +131,11 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 				</ListItemIcon>
 				<ListItemText primary="Payments" />
 			</ListItemButton>
-			<ListItemButton>
+			<ListItemButton onClick={()=>router.push("/dashboard/Payments/list")}>
 				<ListItemIcon>
-					<LayersIcon />
+					<HistoryIcon />
 				</ListItemIcon>
-				<ListItemText primary="Help" />
+				<ListItemText primary="Payment History" />
 			</ListItemButton>
 		</React.Fragment>
 	);
