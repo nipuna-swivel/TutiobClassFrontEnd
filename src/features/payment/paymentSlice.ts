@@ -1,7 +1,4 @@
-// Add Payment
-// Get All Payments
-// Get Payment by NIC
-//Delete Payment
+
 
 import { axios } from "@/api";
 import { IPaymentState } from "@/types";

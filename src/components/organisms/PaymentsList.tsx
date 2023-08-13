@@ -15,11 +15,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 interface Props {
-	payment: IPayment[];
-	handleDeleteStudent: (id: string) => void;
+	payments: IPayment[];
+	// handleDeleteStudent: (id: string) => void;
 }
 
-export default function PaymentsList({ payment, handleDeleteStudent }: Props) {
+export default function PaymentsList({ payments }: Props) {
+	console.log("PaymentsList",payments)
 	const router = useRouter();
 	return (
 		<TableContainer component={Paper}>
@@ -35,7 +36,7 @@ export default function PaymentsList({ payment, handleDeleteStudent }: Props) {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{payment?.map((payment) => (
+					{payments?.map((payment:any) => (
 						<TableRow
 							key={payment._id}
 							sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
@@ -45,12 +46,10 @@ export default function PaymentsList({ payment, handleDeleteStudent }: Props) {
 							<TableCell align="right">{payment.month}</TableCell>
 							<TableCell align="right">{payment.classLocation}</TableCell>
 							<TableCell align="right">{payment.amount}</TableCell>
-							<TableCell align="right">{}</TableCell>
+							<TableCell align="right">{payment.date}</TableCell>
 							<TableCell align="right">
 								{" "}
-								<IconButton aria-label="edit" color="primary">
-									<PaymentIcon />
-								</IconButton>
+								
 								<IconButton aria-label="edit" color="primary">
 									<Link href={`/dashboard/Students/edit/${payment._id}`}>
 										<EditIcon />
@@ -59,7 +58,8 @@ export default function PaymentsList({ payment, handleDeleteStudent }: Props) {
 								<IconButton
 									aria-label="delete"
 									color="secondary"
-									onClick={() => handleDeleteStudent(payment._id)}>
+									// onClick={() => handleDeleteStudent(payment._id)}
+									>
 									<DeleteIcon />
 								</IconButton>
 							</TableCell>

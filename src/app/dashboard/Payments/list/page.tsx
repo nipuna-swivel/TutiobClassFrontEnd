@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import listPayments from "@/components/templates/listPayment";
+import ListPayments from "@/components/templates/listPayment";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -28,7 +28,7 @@ function PaymentList() {
 				</div>
 			</div>
 
-			<listPayments />
+			<ListPayments />
 		</div>
 	);
 }
