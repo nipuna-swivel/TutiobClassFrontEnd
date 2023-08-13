@@ -30,9 +30,9 @@ export const fetchPayments = createAsyncThunk(
 
 export const fetchPaymentByNIC = createAsyncThunk(
   "payment/fetchPaymentByNIC",
-  async (nic: string) => {
+  async (studentNic: string) => {
     try {
-      const { data } = await axios.get(`/payment/${nic}`);
+      const { data } = await axios.get(`/payment/${studentNic}`);
       return data;
     } catch (error) {}
   }

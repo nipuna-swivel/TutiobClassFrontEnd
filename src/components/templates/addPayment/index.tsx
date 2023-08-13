@@ -1,35 +1,39 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { addNewInstitute, reSetAdd } from "@/features/tution/instituteSlice";
+import { addNewPayment, reSetAdd } from "@/features/payment/paymentSlice";
 import { PaymentForm } from "@/components/organisms";
 import { useRouter } from "next/navigation";
 
 function AddInstitute() {
 	const router = useRouter();
 	const dispatch = useAppDispatch();
-	const institutes = useAppSelector((state) => state.institute);
-	const isAdded = useAppSelector((state) => state.institute.isAdded);
-	const loadings = useAppSelector((state) => state.institute.loading);
+	const payments = useAppSelector((state) => state.payment.payment);
+	const isAdded = useAppSelector((state) => state.payment.isAdded);
+	const loadings = useAppSelector((state) => state.payment.loading);
 
-	const saveInstitute = (data: {
+	const date = new Date();
+
+	const addPayment = (data: {
+		studentNic: string;
+		month: string;
 		classLocation: string;
-		day: string;
-		time: string;
-		fee: string;
+		amount: string;
+		date:Date;
 	}) => {
 		dispatch(
-			addNewInstitute({
+			addNewPayment({
+				studentNic: data.studentNic,
+				month: data.month,
 				classLocation: data.classLocation,
-				day: data.day,
-				time: data.time,
-				fee: data.fee,
+				amount: data.amount,
+				date : date.getDate(),
 			})
 		);
 	};
 
 	useEffect(() => {
 		if (isAdded) {
-			router.push("/dashboard/Tution/list");
+			router.push("/dashboard/Students/list");
 		}
 		return () => {
 			dispatch(reSetAdd());
@@ -38,7 +42,7 @@ function AddInstitute() {
 
 	return (
 		<div>
-			<PaymentForm func={saveInstitute} />
+			<PaymentForm func={addPayment} />
 		</div>
 	);
 }

@@ -39,10 +39,11 @@ export interface IInstituteState{
 
 export interface IPayment {
 	_id:string;
-	nic:string;
+	studentNic:string;
 	month:string;
 	classLocation:string;
 	amount:string;
+	date:Date;
 
 }
 
