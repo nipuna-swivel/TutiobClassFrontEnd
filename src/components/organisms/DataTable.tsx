@@ -48,7 +48,10 @@ export default function StudentTable({ students, handleDeleteStudent }: Props) {
 							<TableCell align="right">{student.classLocation}</TableCell>
 							<TableCell align="right">
 								{" "}
-								<IconButton aria-label="edit" color="primary">
+								<IconButton
+									aria-label="edit"
+									color="primary"
+									href={`/dashboard/Payments/view/${student.nic}`}>
 									<PaymentIcon />
 								</IconButton>
 								<IconButton aria-label="edit" color="primary">

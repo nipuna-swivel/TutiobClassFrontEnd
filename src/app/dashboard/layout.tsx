@@ -107,12 +107,12 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 	const router = useRouter();
 	const mainListItems = (
 		<React.Fragment>
-			<ListItemButton onClick={() => router.push("/dashboard")}>
+			{/* <ListItemButton onClick={() => router.push("/dashboard")}>
 				<ListItemIcon>
 					<DashboardIcon />
 				</ListItemIcon>
 				<ListItemText primary="Dashboard" />
-			</ListItemButton>
+			</ListItemButton> */}
 			<ListItemButton onClick={() => router.push("/dashboard/Students/list")}>
 				<ListItemIcon>
 					<SchoolRoundedIcon />
