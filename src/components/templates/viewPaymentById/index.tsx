@@ -6,17 +6,18 @@ import {
 } from "@/features/payment/paymentSlice";
 import { useRouter, useParams } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { IPayment } from "@/types";
+import { IPaymentState } from "@/types";
 
 function PaymentHistory() {
   
 	const router = useRouter();
-	const { studentNic } = useParams();
+	const  {studentNic}  = useParams();
 	const dispatch = useAppDispatch();
-    const { paymentDataById } = useAppSelector((state) => state.payment);
+    const { paymentDataById } = useAppSelector((state) => state.payment.paymentDataById);
 	const isUpdated = useAppSelector((state) => state.payment.isUpdated);
 
-    console.log("payment Data: " + paymentDataById)
+    console.log("========studentNic====: " + studentNic)
+	console.log("---------------------",paymentDataById)
 
 	const initFetch = () => {
 		return dispatch(fetchPaymentByNIC(studentNic));

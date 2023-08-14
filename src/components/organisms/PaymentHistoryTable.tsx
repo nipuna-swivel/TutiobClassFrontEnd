@@ -6,21 +6,16 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import IconButton from "@mui/material/IconButton";
-import PaymentIcon from "@mui/icons-material/Payment";
-import { IPayment } from "@/types";
-import Link from "next/link";
+import { IPaymentState } from "@/types";
 import { useRouter } from "next/navigation";
 
 interface Props {
-	paymentDataById: IPayment[];
-	// handleDeleteStudent: (id: string) => void;
+	paymentDataById: IPaymentState[];
+	
 }
 
 export default function PaymentHistoryTable({ paymentDataById }: Props) {
-	console.log("PaymentsList",paymentDataById)
+	console.log("PaymentsList", paymentDataById);
 	const router = useRouter();
 	return (
 		<TableContainer component={Paper}>
@@ -36,7 +31,7 @@ export default function PaymentHistoryTable({ paymentDataById }: Props) {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{paymentDataById?.map((payment:any) => (
+					{paymentDataById?.map((payment: any) => (
 						<TableRow
 							key={payment._id}
 							sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
@@ -47,22 +42,7 @@ export default function PaymentHistoryTable({ paymentDataById }: Props) {
 							<TableCell align="right">{payment?.classLocation}</TableCell>
 							<TableCell align="right">{payment?.amount}</TableCell>
 							<TableCell align="right">{payment?.date}</TableCell>
-							<TableCell align="right">
-								{" "}
-								
-								{/* <IconButton aria-label="edit" color="primary">
-									<Link href={`/dashboard/Students/edit/${payment._id}`}>
-										<EditIcon />
-									</Link>
-								</IconButton>
-								<IconButton
-									aria-label="delete"
-									color="secondary"
-									// onClick={() => handleDeleteStudent(payment._id)}
-									>
-									<DeleteIcon />
-								</IconButton> */}
-							</TableCell>
+							<TableCell align="right"> </TableCell>
 						</TableRow>
 					))}
 				</TableBody>

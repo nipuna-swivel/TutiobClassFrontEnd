@@ -6,6 +6,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState: IPaymentState = {
 	payments: [],
 	payment: null,
+	paymentDataById:[],
 	loading: false,
 	error: null,
 	isAdded: false,
@@ -101,7 +102,7 @@ const paymentSlice = createSlice({
 			})
 			.addCase(fetchPaymentByNIC.fulfilled, (state, action) => {
 				state.loading = false;
-				state.payment = action.payload;
+				state.paymentDataById = action.payload;
 			})
 			.addCase(fetchPaymentByNIC.rejected, (state) => {
 				state.loading = false;

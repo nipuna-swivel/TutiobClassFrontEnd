@@ -51,6 +51,7 @@ export interface IPaymentState{
 
 	payments:IPayment[];
 	payment:IPayment|null;
+	paymentDataById:IPayment[];
 	loading:boolean;
 	error:string|null;
 	isAdded:boolean
