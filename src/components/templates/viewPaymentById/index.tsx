@@ -9,11 +9,14 @@ import { useAppDispatch, useAppSelector } from "@/hooks";
 import { IPayment } from "@/types";
 
 function PaymentHistory() {
+  
 	const router = useRouter();
 	const { studentNic } = useParams();
 	const dispatch = useAppDispatch();
     const { paymentDataById } = useAppSelector((state) => state.payment);
 	const isUpdated = useAppSelector((state) => state.payment.isUpdated);
+
+    console.log("payment Data: " + paymentDataById)
 
 	const initFetch = () => {
 		return dispatch(fetchPaymentByNIC(studentNic));

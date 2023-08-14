@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default function PaymentsList({ payments }: Props) {
-	console.log("PaymentsList",payments)
+	console.log("PaymentsList", payments);
 	const router = useRouter();
 	return (
 		<TableContainer component={Paper}>
@@ -36,7 +36,7 @@ export default function PaymentsList({ payments }: Props) {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{payments?.map((payment:any) => (
+					{payments?.map((payment: any) => (
 						<TableRow
 							key={payment._id}
 							sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
@@ -49,17 +49,11 @@ export default function PaymentsList({ payments }: Props) {
 							<TableCell align="right">{payment.date}</TableCell>
 							<TableCell align="right">
 								{" "}
-								
-								<IconButton aria-label="edit" color="primary">
-									<Link href={`/dashboard/Students/edit/${payment._id}`}>
-										<EditIcon />
-									</Link>
-								</IconButton>
 								<IconButton
 									aria-label="delete"
 									color="secondary"
 									// onClick={() => handleDeleteStudent(payment._id)}
-									>
+								>
 									<DeleteIcon />
 								</IconButton>
 							</TableCell>

@@ -14,6 +14,7 @@ const students={
         school:"Royal Collage",
         contactNo:"0771256567",
         classLocation:"Rotary"
+        
 
     }]
     
