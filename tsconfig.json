@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "__tests__/LoginForm.test.js", "__tests__/InstituteTable.test.js", "__tests__/DataTable.test.js", "__tests__/InstituteForm.test.js"],
   "exclude": ["node_modules"]
 }
