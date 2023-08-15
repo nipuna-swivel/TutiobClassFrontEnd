@@ -59,14 +59,14 @@ export const PaymentForm = ({ paymentDetails, func }: Props) => {
 							{...register("studentNic")}
 							required
 							fullWidth
-							sx={{ width: 600 }}
+							sx={{ width: 800 }}
 							label="NIC"
 							id="outlined-required"
 							size="small"
 						/>
-						<Button variant="outlined">
+						{/* <Button variant="outlined">
 							<SearchIcon />
-						</Button>
+						</Button> */}
 						{/* <IconButton aria-label="delete">
 							<SearchIcon />
 						</IconButton> */}

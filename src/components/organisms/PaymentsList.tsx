@@ -46,16 +46,10 @@ export default function PaymentsList({ payments }: Props) {
 							<TableCell align="right">{payment.month}</TableCell>
 							<TableCell align="right">{payment.classLocation}</TableCell>
 							<TableCell align="right">{payment.amount}</TableCell>
-							<TableCell align="right">{payment.date}</TableCell>
+							<TableCell align="right"></TableCell>
 							<TableCell align="right">
 								{" "}
-								<IconButton
-									aria-label="delete"
-									color="secondary"
-									// onClick={() => handleDeleteStudent(payment._id)}
-								>
-									<DeleteIcon />
-								</IconButton>
+							
 							</TableCell>
 						</TableRow>
 					))}
