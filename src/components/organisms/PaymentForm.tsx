@@ -4,14 +4,13 @@ import TextField from "@mui/material/TextField";
 import { Button, Stack, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
-import { IInstitute, IPayment } from "@/types";
+import { IPayment } from "@/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
-import SearchIcon from "@mui/icons-material/Search";
 interface Props {
 	paymentDetails: IPayment;
-	func: (value: IInstitute) => void;
+	func: (value: IPayment) => void;
 }
 const schema = yup
 	.object({
@@ -53,7 +52,9 @@ export const PaymentForm = ({ paymentDetails, func }: Props) => {
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Stack className="flex justify-center ml-10">
 					<div className="p-3">
-						<p className="text-rose-700 font-semibold">{errors.studentNic?.message}</p>
+						<p className="text-rose-700 font-semibold">
+							{errors.studentNic?.message}
+						</p>
 
 						<TextField
 							{...register("studentNic")}
@@ -64,12 +65,6 @@ export const PaymentForm = ({ paymentDetails, func }: Props) => {
 							id="outlined-required"
 							size="small"
 						/>
-						{/* <Button variant="outlined">
-							<SearchIcon />
-						</Button> */}
-						{/* <IconButton aria-label="delete">
-							<SearchIcon />
-						</IconButton> */}
 					</div>
 					<div className="p-3">
 						<p className="text-rose-700 font-semibold">

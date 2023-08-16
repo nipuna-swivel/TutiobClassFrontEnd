@@ -31,7 +31,7 @@ export const InstituteForm = ({ instituteDetails, func }: Props) => {
 		watch,
 		setValue,
 		formState: { errors },
-	} = useForm<IInstitute>({ resolver: yupResolver(schema) });
+	} = useForm<IInstitute>({ resolver: yupResolver(schema) }); 
 	const onSubmit: SubmitHandler<IInstitute> = (data) => {
 		func(data);
 	};

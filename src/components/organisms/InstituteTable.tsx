@@ -57,7 +57,7 @@ export default function InstituteTable({
 								<IconButton
 									aria-label="delete"
 									color="secondary"
-									onClick={() => handleDeleteInstitute(institute._id)}>
+									onClick={() => handleDeleteInstitute(institute._id!)}>
 									<DeleteIcon />
 								</IconButton>
 							</TableCell>

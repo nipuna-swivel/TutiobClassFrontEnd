@@ -61,7 +61,7 @@ export default function StudentTable({ students, handleDeleteStudent }: Props) {
 								<IconButton
 									aria-label="delete"
 									color="secondary"
-									onClick={() => handleDeleteStudent(student._id)}>
+									onClick={() => handleDeleteStudent(student._id!)}>
 									<DeleteIcon />
 								</IconButton>
 							</TableCell>

@@ -1,5 +1,5 @@
 export interface IStudent {
-	_id: string;
+	_id?: string;
 	name: string;
 	nic: string;
 	school: string;
@@ -17,44 +17,39 @@ export interface IStudentState {
 	handleDeleteStudent: () => void;
 }
 
-export interface IInstitute{
-	_id: string;
+export interface IInstitute {
+	_id?: string;
 	classLocation: string;
 	day: string;
 	time: string;
 	fee: string;
 }
 
-export interface IInstituteState{
-	institutes:IInstitute[];
-	institute:IInstitute|null;
+export interface IInstituteState {
+	institutes: IInstitute[];
+	institute: IInstitute | null;
 	loading: boolean;
-	error:string|null;
+	error: string | null;
 	isAdded: boolean;
 	isUpdated: boolean;
-	handleDeleteInstitute:()=>void;
-
-
+	handleDeleteInstitute: () => void;
 }
 
 export interface IPayment {
-	_id:string;
-	studentNic:string;
-	month:string;
-	classLocation:string;
-	amount:string;
-	date:Date;
-
+	_id?: string;
+	studentNic: string;
+	month: string;
+	classLocation: string;
+	amount: string;
+	date?: Date;
 }
 
-export interface IPaymentState{
-
-	payments:IPayment[];
-	payment:IPayment|null;
-	paymentDataById:IPayment[];
-	loading:boolean;
-	error:string|null;
-	isAdded:boolean
-	isUpdated:boolean
-
+export interface IPaymentState {
+	payments: IPayment[];
+	payment: IPayment | null;
+	paymentDataById: IPayment[];
+	loading: boolean;
+	error: string | null;
+	isAdded: boolean;
+	isUpdated: boolean;
 }
