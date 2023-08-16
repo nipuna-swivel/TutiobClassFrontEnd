@@ -9,8 +9,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
 interface Props {
-	paymentDetails: IPayment;
-	func: (value: IPayment) => void;
+//	paymentDetails?: IPayment;
+	func: (value:any) => void;
 }
 const schema = yup
 	.object({
@@ -22,8 +22,8 @@ const schema = yup
 	.required();
 type FormData = yup.InferType<typeof schema>;
 
-export const PaymentForm = ({ paymentDetails, func }: Props) => {
-	console.log("paymentData", paymentDetails);
+export const PaymentForm = ({  func }: Props) => {
+//	console.log("paymentData", paymentDetails);
 	const router = useRouter();
 	const {
 		register,
@@ -36,14 +36,14 @@ export const PaymentForm = ({ paymentDetails, func }: Props) => {
 		func(data);
 	};
 
-	useEffect(() => {
-		if (paymentDetails) {
-			setValue("studentNic", paymentDetails.studentNic);
-			setValue("month", paymentDetails.month);
-			setValue("classLocation", paymentDetails.classLocation);
-			setValue("amount", paymentDetails.amount);
-		}
-	}, [paymentDetails]);
+	// useEffect(() => {
+	// 	if (paymentDetails) {
+	// 		setValue("studentNic", paymentDetails.studentNic);
+	// 		setValue("month", paymentDetails.month);
+	// 		setValue("classLocation", paymentDetails.classLocation);
+	// 		setValue("amount", paymentDetails.amount);
+	// 	}
+	// }, [paymentDetails]);
 
 	console.log(watch("studentNic"));
 	return (
