@@ -41,7 +41,7 @@ export default function LoginForm() {
 	const [password, setPassword] = useState("");
 	const router = useRouter();
 	const dispatch = useAppDispatch();
-	const { loading } = useAppSelector((state) => state.auth.loading);
+	
 
 	const handleSubmit = async (event: any) => {
 		event.preventDefault();
@@ -88,7 +88,7 @@ export default function LoginForm() {
 							fullWidth
 							id="username"
 							value={username}
-							onInput={(e) => setUserName(e.target.value)}
+							onInput={(e: React.ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)}
 							label="User-Name"
 							name="username"
 							autoComplete="userName"
@@ -99,7 +99,7 @@ export default function LoginForm() {
 							required
 							fullWidth
 							value={password}
-							onInput={(e) => setPassword(e.target.value)}
+							onInput={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
 							name="password"
 							label="Password"
 							type="password"
@@ -115,7 +115,7 @@ export default function LoginForm() {
 							fullWidth
 							variant="contained"
 							sx={{ mt: 3, mb: 2 }}
-							// onClick={() => router.push('/dashboard')}
+						
 						>
 							Sign In
 						</Button>
