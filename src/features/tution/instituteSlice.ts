@@ -28,7 +28,7 @@ export const fetchInstitutes = createAsyncThunk(
 
 export const fetchInstituteById = createAsyncThunk(
   "institute/fetchInstituteById",
-  async (instituteId: string) => {
+  async (instituteId: string|string[]) => {
     try {
       const { data } = await axios.get(`/tutionClass/${instituteId}`);
       return data;
@@ -50,7 +50,7 @@ export const addNewInstitute = createAsyncThunk(
 
 export const editInstitute = createAsyncThunk(
   "institute/editInstitute",
-  async (params: { id: string; payload: any }, { rejectWithValue }) => {
+  async (params: { id: string|string[]; payload: any }, { rejectWithValue }) => {
    console.log("parameters", params);
     try {
       const { data } = await axios.put(`/tutionClass/${params.id}`, params.payload);

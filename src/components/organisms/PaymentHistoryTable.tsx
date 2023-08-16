@@ -10,7 +10,7 @@ import { IPaymentState } from "@/types";
 import { useRouter } from "next/navigation";
 
 interface Props {
-	paymentDataById: IPaymentState[];
+	paymentDataById?: IPaymentState[];
 	
 }
 

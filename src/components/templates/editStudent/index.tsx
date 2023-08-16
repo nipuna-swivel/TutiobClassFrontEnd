@@ -40,11 +40,17 @@ function EditStudentForm() {
 		};
 	}, [isUpdated]);
 
-	return (
-		<div>
-			<StudentForm studentDetails={studentDetails} func={updateStudent} />
-		</div>
-	);
+	if (studentDetails) {
+		return (
+			<div>
+				<StudentForm studentDetails={studentDetails} func={updateStudent} />
+			</div>
+		);
+	} else {
+		return( <></>)
+	}
+
+	
 }
 
 export default EditStudentForm;

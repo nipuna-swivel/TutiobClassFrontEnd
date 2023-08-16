@@ -47,7 +47,7 @@ export interface IPayment {
 export interface IPaymentState {
 	payments: IPayment[];
 	payment: IPayment | null;
-	paymentDataById: IPayment[];
+	paymentDataById: IPayment[]|any;
 	loading: boolean;
 	error: string | null;
 	isAdded: boolean;

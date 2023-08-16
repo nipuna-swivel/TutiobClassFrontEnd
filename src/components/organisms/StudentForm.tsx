@@ -9,8 +9,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
 interface Props {
-	studentDetails: IStudent;
-	func: (value: IStudent) => void;
+	studentDetails?: IStudent;
+	func: (value: any) => void;
 }
 const schema = yup
 	.object({

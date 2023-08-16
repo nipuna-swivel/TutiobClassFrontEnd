@@ -25,7 +25,7 @@ export const fetchPayments = createAsyncThunk(
 
 export const fetchPaymentByNIC = createAsyncThunk(
 	"payment/fetchPaymentByNIC",
-	async (studentNic: string) => {
+	async (studentNic: string|string[]) => {
 		try {
 			const { data } = await axios.get(`/payment?studentNic=${studentNic}`);
 			return data;
