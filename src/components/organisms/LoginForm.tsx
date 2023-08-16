@@ -52,9 +52,9 @@ export default function LoginForm() {
 				login({ username: username, password: password })
 			);
 			console.log("Login results:", result);
-			if (result?.error) {
-				return message.error(result?.payload);
-			}
+			// if (result?.error) {
+			// 	return message.error(result?.payload);
+			// }
 			router.push("/dashboard/Students/list");
 		} catch (err) {
 			console.error(err);
