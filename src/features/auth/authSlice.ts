@@ -1,7 +1,8 @@
 import { axios } from "@/api";
+import { IAuthState } from "@/types";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState:IAuthState = {
   loading: false,
   accessToken: null,
   isAuthenticated: false,

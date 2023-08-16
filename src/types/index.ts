@@ -53,3 +53,15 @@ export interface IPaymentState {
 	isAdded: boolean;
 	isUpdated: boolean;
 }
+
+export interface IAuth{
+	usernames: string;
+	password: string;
+}
+
+export interface IAuthState{
+	loading: boolean;
+	accessToken: string|null;
+	isAuthenticated: boolean;
+	error: string|null;
+}

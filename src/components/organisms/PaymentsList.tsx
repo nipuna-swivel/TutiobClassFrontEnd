@@ -6,17 +6,12 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import IconButton from "@mui/material/IconButton";
-import PaymentIcon from "@mui/icons-material/Payment";
 import { IPayment } from "@/types";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 interface Props {
 	payments: IPayment[];
-	// handleDeleteStudent: (id: string) => void;
+	
 }
 
 export default function PaymentsList({ payments }: Props) {

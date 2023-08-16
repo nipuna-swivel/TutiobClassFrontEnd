@@ -51,6 +51,7 @@ export default function LoginForm() {
 			const result = await dispatch(
 				login({ username: username, password: password })
 			);
+			console.log("Login results:", result);
 			if (result?.error) {
 				return message.error(result?.payload);
 			}
