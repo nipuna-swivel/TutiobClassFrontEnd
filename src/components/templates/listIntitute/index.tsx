@@ -1,4 +1,4 @@
-import InstituteTable from "@/components/organisms/InstituteTable";
+import { InstituteTable } from "@/components/organisms/InstituteTable";
 import React, { useCallback, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import {
@@ -10,7 +10,7 @@ interface Props {
 	handleDeleteInstitute: () => void;
 }
 
-function ListInstitute() {
+export function ListInstitute() {
 	const dispatch = useAppDispatch();
 	const { institutes } = useAppSelector((state) => state.institute);
 	const initFetch = useCallback(() => {
@@ -32,7 +32,10 @@ function ListInstitute() {
 	};
 	return (
 		<div>
-			<InstituteTable institutes={institutes} handleDeleteInstitute={handleDeleteInstitute}   />
+			<InstituteTable
+				institutes={institutes}
+				handleDeleteInstitute={handleDeleteInstitute}
+			/>
 		</div>
 	);
 }

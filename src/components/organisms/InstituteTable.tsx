@@ -1,14 +1,29 @@
 import React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import IconButton from "@mui/material/IconButton";
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableContainer,
+	TableHead,
+	TableRow,
+	Paper,
+	IconButton,
+} from "@mui/material";
+//import DeleteIcon from "@mui/icons-material/Delete";
+//import EditIcon from "@mui/icons-material/Edit";
+
+import { Delete as DeleteIcon, Edit as EditIcon } from "@mui/icons-material";
+
+//import { Table } from "@mui/material/Table";
+//import TableBody from "@mui/material/TableBody";
+//import TableCell from "@mui/material/TableCell";
+//import {TableContainer} from "@mui/material/TableContainer";
+//import TableHead from "@mui/material/TableHead";
+//import TableRow from "@mui/material/TableRow";
+//import Paper from "@mui/material/Paper";
+//import DeleteIcon from "@mui/icons-material/Delete";
+//import EditIcon from "@mui/icons-material/Edit";
+//import { IconButton } from "@mui/material/IconButton";
 import { IInstitute } from "@/types";
 import Link from "next/link";
 
@@ -17,10 +32,7 @@ interface Props {
 	handleDeleteInstitute: (id: string) => void;
 }
 
-export default function InstituteTable({
-	institutes,
-	handleDeleteInstitute,
-}: Props) {
+export function InstituteTable({ institutes, handleDeleteInstitute }: Props) {
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -48,10 +60,8 @@ export default function InstituteTable({
 							<TableCell align="right">
 								{" "}
 								<IconButton aria-label="edit" color="primary">
-									<Link 
-                                     href={`/dashboard/Tution/edit/${institute._id}`}
-                                    >
-									<EditIcon />
+									<Link href={`/dashboard/Tution/edit/${institute._id}`}>
+										<EditIcon />
 									</Link>
 								</IconButton>
 								<IconButton

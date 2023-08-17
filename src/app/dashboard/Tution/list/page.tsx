@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+import { PersonAdd as PersonAddIcon } from "@mui/icons-material";
+import { IconButton, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
-import ListInstitute from "@/components/templates/listIntitute";
+import { ListInstitute } from "@/components/templates/listIntitute";
 
 function TutionClassList() {
 	const router = useRouter();
@@ -20,8 +19,7 @@ function TutionClassList() {
 						aria-label="add"
 						color="primary"
 						className="basis-1/4"
-						 onClick={() => router.push("/dashboard/Tution/add")}
-					>
+						onClick={() => router.push("/dashboard/Tution/add")}>
 						<PersonAddIcon />
 					</IconButton>
 				</div>
