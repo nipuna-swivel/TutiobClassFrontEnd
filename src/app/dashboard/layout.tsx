@@ -20,8 +20,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import LayersIcon from "@mui/icons-material/Layers";
 import { useRouter } from "next/navigation";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -107,12 +105,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
 	const router = useRouter();
 	const mainListItems = (
 		<React.Fragment>
-			{/* <ListItemButton onClick={() => router.push("/dashboard")}>
-				<ListItemIcon>
-					<DashboardIcon />
-				</ListItemIcon>
-				<ListItemText primary="Dashboard" />
-			</ListItemButton> */}
+	
 			<ListItemButton onClick={() => router.push("/dashboard/Students/list")}>
 				<ListItemIcon>
 					<SchoolRoundedIcon />

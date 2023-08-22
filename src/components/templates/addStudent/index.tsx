@@ -7,9 +7,8 @@ import { useRouter } from "next/navigation";
 function AddStudent() {
 	const router = useRouter();
 	const dispatch = useAppDispatch();
-	const students = useAppSelector((state) => state.student);
 	const isAdded = useAppSelector((state) => state.student.isAdded);
-	const loadings = useAppSelector((state) => state.student.loading);
+	
 
 	const saveStudent = (data: {
 		name: string;

@@ -16,7 +16,7 @@ interface Props {
 
  function PaymentsTable({ payments }: Props) {
 	console.log("PaymentsList", payments);
-	const router = useRouter();
+	
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 650 }} aria-label="simple table">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { Button, Stack, Typography } from "@mui/material";
@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
 interface Props {
-//	paymentDetails?: IPayment;
+
 	func: (value:any) => void;
 }
 const schema = yup
@@ -23,7 +23,7 @@ const schema = yup
 type FormData = yup.InferType<typeof schema>;
 
 export const PaymentForm = ({  func }: Props) => {
-//	console.log("paymentData", paymentDetails);
+
 	const router = useRouter();
 	const {
 		register,
@@ -36,14 +36,7 @@ export const PaymentForm = ({  func }: Props) => {
 		func(data);
 	};
 
-	// useEffect(() => {
-	// 	if (paymentDetails) {
-	// 		setValue("studentNic", paymentDetails.studentNic);
-	// 		setValue("month", paymentDetails.month);
-	// 		setValue("classLocation", paymentDetails.classLocation);
-	// 		setValue("amount", paymentDetails.amount);
-	// 	}
-	// }, [paymentDetails]);
+	
 
 	console.log(watch("studentNic"));
 	return (

@@ -7,7 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { IPayment } from "@/types";
-import { useRouter } from "next/navigation";
+
 
 interface Props {
 	payments: IPayment[];
@@ -15,8 +15,7 @@ interface Props {
 }
 
 export default function PaymentsList({ payments }: Props) {
-	console.log("PaymentsList", payments);
-	const router = useRouter();
+	
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 650 }} aria-label="simple table">

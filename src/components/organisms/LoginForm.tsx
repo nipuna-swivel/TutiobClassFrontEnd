@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useRouter } from "next/navigation";
-import { useAppDispatch, useAppSelector } from "@/hooks";
+import { useAppDispatch} from "@/hooks";
 import { login } from "@/features/auth/authSlice";
 import { useState } from "react";
 import Link from "next/link";
@@ -33,7 +33,6 @@ function Copyright(props: any) {
 	);
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function LoginForm() {
@@ -52,9 +51,7 @@ export default function LoginForm() {
 				login({ username: username, password: password })
 			);
 			console.log("Login results:", result);
-			// if (result?.error) {
-			// 	return message.error(result?.payload);
-			// }
+	
 			router.push("/dashboard/Students/list");
 		} catch (err) {
 			console.error(err);

@@ -6,10 +6,9 @@ import { useRouter } from "next/navigation";
 
 function AddInstitute() {
 	const router = useRouter();
-	const dispatch = useAppDispatch();
-	const institutes = useAppSelector((state) => state.institute);
+	const dispatch = useAppDispatch();	
 	const isAdded = useAppSelector((state) => state.institute.isAdded);
-	const loadings = useAppSelector((state) => state.institute.loading);
+
 
 	const saveInstitute = (data: {
 		classLocation: string;
