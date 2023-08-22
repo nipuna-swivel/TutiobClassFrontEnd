@@ -1,12 +1,11 @@
-
-"use client"
-import React from 'react';
-import LoginForm from '@/components/organisms/LoginForm';
+"use client";
+import React from "react";
+import LoginForm from "@/components/organisms/LoginForm";
 
 export default function Login() {
-  return (
-    <div>
-      <LoginForm/>
-    </div>
-  )
+	return (
+		<div>
+			<LoginForm />
+		</div>
+	);
 }
